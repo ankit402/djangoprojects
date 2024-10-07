@@ -1,0 +1,53 @@
+while creating template directory remember you need to create  app name folder inside then add html file
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+PS E:\djangoproject\Djangochat> cd mychatsite
+PS E:\djangoproject\Djangochat\mychatsite> python manage.py makemigrations
+Migrations for 'chatapp':
+  chatapp\migrations\0001_initial.py
+    + Create model ChatRoom
+PS E:\djangoproject\Djangochat\mychatsite> python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, chatapp, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying chatapp.0001_initial... OK
+  Applying sessions.0001_initial... OK
+PS E:\djangoproject\Djangochat\mychatsite> python manage.py createsuperuser
+Username (leave blank to use 'ankit'): ankit
+Email address: ankitsamsung92020@gmail.com
+Password:
+Password (again):
+Error: Your passwords didn't match.
+Password:
+Password (again):
+The password is too similar to the username.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+PS E:\djangoproject\Djangochat\mychatsite> 
+
+after admin login  if page not showing  please register the page 
+from django.contrib import admin
+from .models import ChatRoom
+
+# Register your models here.
+admin.site.register(ChatRoom)
